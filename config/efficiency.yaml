@@ -1,0 +1,64 @@
+dimu_mass_low: 2.95
+dimu_mass_high: 3.25
+bins_pt_dimu: [25, 30, 50, 70, 100]
+
+bins_rap_dimu: [0.0, 0.9, 1.2]
+#bins_pt_dimu: [25, 100]
+#bins_rap_dimu: [0.0, 1.2]
+bins_pt_dstar: [4, 10, 20, 30, 60]
+#bins_rap_dstar: [0.0, 2.1]
+#bins_pt_dstar: [4, 60]
+bins_rap_dstar: [0.0, 0.9, 1.2, 2.1]
+#bins_pt_dimu: [20, 30, 50, 70, 100, 130]
+#bins_rap_dimu: [0.0, 0.5, 1.2]
+#bins_pt_dstar: [4, 10, 20, 30, 50, 70, 100]
+particle: "J/psi"
+
+#Acceptance
+muon_pt_min: 3.
+muon_eta: 2.4
+dimu_pt_min: 25.
+dimu_pt_max: 100.
+dimu_rap: 1.2
+dstar_pt_min: 4.
+dstar_pt_max: 60.
+dstar_rap: 2.1
+
+# Cuts Efficiency
+dstar_track_pt_cut: 1.6
+dstar_d0_cosphi: 0.99
+dstar_d0_dlSig: 2.5
+dstar_d0_mass: 0.028
+dstar_d0_pt: 4.0
+
+# Trigger Efficiency
+trigger: 
+  "2016APV": "HLT_Dimuon16_Jpsi"
+  "2016":    "HLT_Dimuon16_Jpsi"
+  "2017":    "HLT_Dimuon25_Jpsi"
+  "2018":    "HLT_Dimuon25_Jpsi"
+
+# Association Efficiency
+vertex_probability_cut: 0.05
+
+corrections:
+  pileup:
+    "2016APV": "data/corrections/pile_up_reweight_2016APV.root"
+    "2016":    "data/corrections/pile_up_reweight_2016.root"
+    "2017":    "data/corrections/pileup_reweight_2017.root"
+    "2018":    "data/corrections/pileup_reweight_2018.root"
+  muon_track:
+    "2016APV": "data/corrections/Efficiency_muon_generalTracks_Run2016APV_UL_trackerMuon.json"
+    "2016":    "data/corrections/Efficiency_muon_generalTracks_Run2016_UL_trackerMuon.json"
+    "2017":    "data/corrections/Efficiency_muon_generalTracks_Run2017_UL_trackerMuon.json"
+    "2018":    "data/corrections/Efficiency_muon_generalTracks_Run2018_UL_trackerMuon.json"
+  muon_id:
+    "2016APV": "data/corrections/Efficiency_muon_trackerMuon_Run2016APV_UL_ID.json"
+    "2016":    "data/corrections/Efficiency_muon_trackerMuon_Run2016_UL_ID.json"
+    "2017":    "data/corrections/Efficiency_muon_trackerMuon_Run2017_UL_ID.json"
+    "2018":    "data/corrections/Efficiency_muon_trackerMuon_Run2018_UL_ID.json"
+
+# Output file name
+mc_type: "DPS-ccbar" #options: DPS-ccbar,  DPS-bbbar
+out_name: "pt_bin" #names: pt_bin, eta_bin, , fiducial;
+category: "jpsi" # name to save figures: "jpsi", "dstar"
